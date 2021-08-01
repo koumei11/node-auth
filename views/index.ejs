@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-</head>
-
-<body>
-  <p>Hello World</p>
-</body>
-
-</html>
+<% const title='会員'; %>
+<% const state = screen === 'signUp' ? 'Register' : 'Login'; %>
+<%- include('includes/header', { title: title }); %>
+<div id="contents">
+  <div id="form">
+    <p><%= state %></p>
+    <% if (screen === 'signUp') { %>
+      <%- include('admin/signup'); %>
+    <% } else { %>
+      <%- include('admin/signin'); %>
+    <% } %>
+  </div>
+</div>
+<%- include('includes/footer'); %>
