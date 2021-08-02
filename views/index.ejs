@@ -1,6 +1,6 @@
 <% const title='会員'; %>
 <% const state = screen === 'signUp' ? 'Register' : 'Login'; %>
-<%- include('includes/header', { title: title }); %>
+<%- include('includes/header', { title, isValidUser }); %>
 <div id="contents">
   <div id="form">
     <p><%= state %></p>

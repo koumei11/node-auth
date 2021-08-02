@@ -59,6 +59,7 @@ nav > .nav-switch > li > a {
 form {
   display: inline-block;
   text-align: right;
+  padding-right: 100px;
 }
 
 form > button {

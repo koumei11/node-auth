@@ -13,9 +13,16 @@
   <header>
     <nav>
       <p class="nav-name">Laravel</p>
-      <ul class="nav-switch">
-        <li><a href="/sign-in">Login</a></li>
-        <li><a href="/sign-up">Register</a></li>
-      </ul>
+      <% if (!isValidUser) { %>
+        <ul class="nav-switch">
+          <li><a href="/sign-in">Login</a></li>
+          <li><a href="/sign-up">Register</a></li>
+        </ul>
+      <% } else { %>
+        <div class="logout">
+          <span><%= userName %></span>
+          <span>&#9660;</span>
+        </div>
+      <% } %>
     </nav>
   </header>

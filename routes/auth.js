@@ -3,18 +3,17 @@ const router = express.Router();
 
 router.get('/sign-in', (req, res) => {
   res.locals.screen = 'signIn';
-  res.render('index');
+  res.render('index', { isValidUser: false });
 });
 
 router.post('/sign-in', (req, res) => {
-  console.log('User information posted.');
-  console.dir(req.body);
-  res.redirect('/sign-in');
+  // res.cookie('username', req.body.name);
+  res.render('main/home', { userName: req.body.name, isValidUser: true });
 });
 
 router.get('/sign-up', (req, res) => {
   res.locals.screen = 'signUp';
-  res.render('index');
+  res.render('index', { isValidUser: false });
 });
 
 router.post('/sign-up', (req, res) => {
