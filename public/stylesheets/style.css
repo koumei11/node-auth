@@ -59,7 +59,7 @@ nav > .nav-switch > li > a {
 form {
   display: inline-block;
   text-align: right;
-  padding-right: 100px;
+  margin-right: 100px;
 }
 
 form > button {
@@ -96,3 +96,63 @@ form > button {
   border-radius: 3px;
 }
 
+.user-info {
+  width: 100%;
+  text-align: right;
+  margin-right: 70px;
+}
+
+.user-info > p {
+  display: inline-block;
+  font-size: 16px;
+  color: #444444;
+  margin-right: 3px;
+}
+
+.user-info > .triangle{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #444444;
+  cursor: pointer;
+}
+
+.logout {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  background-color: #ffffff;
+  width: 130px;
+  height: 50px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+}
+
+.logout > .outer {
+  height: 100%;
+  display: flex;
+  padding-left: 10px;
+  align-items: center;
+}
+
+.logout .inner {
+  font-size: 14px;
+  color: #444444;
+  cursor: pointer;
+}
+
+.logout .inner button {
+  background-color: #ffffff;
+  color: #444444;
+  padding: 0px;
+  margin: 0px;
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+}

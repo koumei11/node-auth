@@ -19,9 +19,16 @@
           <li><a href="/sign-up">Register</a></li>
         </ul>
       <% } else { %>
+        <div class="user-info">
+          <p class="user-name"><%= userName %></p>
+          <div class="triangle"></div>
+        </div>
         <div class="logout">
-          <span><%= userName %></span>
-          <span>&#9660;</span>
+          <div class="outer">
+            <form action="/logout" method="POST" class="inner">
+              <button type="submit">Logout</button>
+            </form>
+          </div>
         </div>
       <% } %>
     </nav>
