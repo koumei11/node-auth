@@ -1,19 +1,31 @@
 <form action="/sign-up" method="POST">
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" name="name" placeholder="氏名">
+    <label for="name">User Name</label>
+    <input type="text" name="name" placeholder="ユーザー名" value="<%= values.name ? values.name : ''; %>">
   </div>
+  <% if (errors.nameError) { %>
+    <p class="error-msg"><%= errors.nameError.message %></p>
+  <% } %>
   <div class="form-group">
     <label for="mail">E-Mail Address</label>
-    <input type="text" name="mail" placeholder="メールアドレス">
+    <input type="text" name="mail" placeholder="メールアドレス" value="<%= values.mail ? values.mail : ''; %>">
   </div>
+  <% if (errors.mailError) { %>
+    <p class="error-msg"><%= errors.mailError.message %></p>
+  <% } %>
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password" name="password" placeholder="パスワード">
   </div>
+  <% if (errors.passwordError) { %>
+    <p class="error-msg"><%= errors.passwordError.message %></p>
+  <% } %>
   <div class="form-group">
     <label for="confirm">Confirm Password</label>
     <input type="password" name="confirm" placeholder="パスワード（確認）">
   </div>
+  <% if (errors.confirmError) { %>
+    <p class="error-msg"><%= errors.confirmError.message %></p>
+  <% } %>
   <button type="submit">Register</button>
 </form>

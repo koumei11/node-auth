@@ -1,11 +1,19 @@
 <form action="/sign-in" method="POST">
   <div class="form-group">
-    <label for="mail">E-Mail Address</label>
-    <input type="text" name="mail" placeholder="メールアドレス">
+    <label for="name">User Name</label>
+    <input type="text" name="name" placeholder="ユーザー名">
   </div>
+  <% if (locals.nameError) { %>
+    <p class="error-msg"><%= nameError %></p>
+  <% } %>
   <div class="form-group">
     <label for="password">Password</label>
     <input type="password" name="password" placeholder="パスワード">
   </div>
+  <% if (locals.passwordError) { %>
+    <p class="error-msg">
+      <%= passwordError %>
+    </p>
+  <% } %>
   <button type="submit">Login</button>
 </form>

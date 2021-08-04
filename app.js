@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 3000;
 
-// RequestのBody解析用にbody-parserを設定
+// ミドルウェア設定
 app.use(bodyParser.urlencoded( {extended: false} ));
+app.use(cookieParser());
 
 // 静的ファイルのルート
 app.use('/static', express.static('public'));
